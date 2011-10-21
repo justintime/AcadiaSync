@@ -9,7 +9,7 @@ USER=justintime
 exec &> /tmp/mp3sync.log
 
 PATH=/bin:/usr/bin:/usr/local/bin
-MOUNTPOINT="/Volumes/${VOLUME}
+MOUNTPOINT="/Volumes/${VOLUME}"
 
 if [ ! -d ${MOUNTPOINT} ]; then
   echo "${VOLUME} not mounted at ${MOUNTPOINT}"
