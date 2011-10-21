@@ -19,6 +19,8 @@ fi
 # --size-only saves a lot of time on slow usb without timestamp support
 rsync -ruv --delete --size-only /Users/${USER}/Music/iTunes/iTunes\ Media/Music/* ${MOUNTPOINT}/
 
+java -jar $(dirname $0)/itunesexport/itunesexport.jar -library=/Users/${USER}/Music/iTunes/iTunes\ Music\ Library.xml -outputDir=${MOUNTPOINT} -musicPath="/"
+
 cd ${MOUNTPOINT} && rm -rf .Spotlight-V100 .Trashes ._.Trashes .fseventsd &&  echo "Removed hidden dirs"
 cd /
 
