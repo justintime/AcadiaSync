@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 VOLUME="ACADIA"
 USER=justintime
 
@@ -26,7 +27,7 @@ cd /
 
 if [ -x "/usr/local/bin/fatsort" ]; then
   DEVICE=$(/sbin/mount | grep ${MOUNTPOINT} | cut -d' ' -f1)
-  /usr/sbin/diskutil unmount /Volumes/${VOLUME}
+  /usr/sbin/diskutil unmount ${DEVICE} && \
   /usr/local/bin/fatsort -I -c ${DEVICE} && echo "Completed FAT sort."
 fi
 
