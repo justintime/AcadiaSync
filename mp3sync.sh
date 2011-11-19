@@ -25,6 +25,9 @@ java -jar $(dirname $0)/itunesexport/itunesexport.jar -library=/Users/${USER}/Mu
 cd ${MOUNTPOINT} && rm -rf .Spotlight-V100 .Trashes ._.Trashes .fseventsd &&  echo "Removed hidden dirs"
 cd /
 
+echo "---File list---"
+find ${MOUNTPOINT} -type f
+echo "---End File list---"
 if [ -x "/usr/local/bin/fatsort" ]; then
   DEVICE=$(/sbin/mount | grep ${MOUNTPOINT} | cut -d' ' -f1)
   /usr/sbin/diskutil unmount ${DEVICE} && \
