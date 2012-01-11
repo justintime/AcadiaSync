@@ -31,6 +31,6 @@ echo "---End File list---"
 if [ -x "/usr/local/bin/fatsort" ]; then
   DEVICE=$(/sbin/mount | grep ${MOUNTPOINT} | cut -d' ' -f1)
   /usr/sbin/diskutil unmount ${DEVICE} && \
-  /usr/local/bin/fatsort -I -c ${DEVICE} && echo "Completed FAT sort."
+  /usr/local/bin/fatsort -o f -I -c ${DEVICE} && echo "Completed FAT sort."
 fi
 
